@@ -211,6 +211,38 @@
       margin: 0;
     }
 
+
+    .filters {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin: 16px 0 4px; align-items: center;
+    }
+    .filters .label { color: var(--muted); font-size: 0.85rem; margin-right: 4px; }
+    .filter-btn {
+      background: var(--chip);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .filter-btn:hover { border-color: #3a4354; color: var(--text); }
+    .filter-btn.active {
+      background: rgba(125, 211, 252, 0.14);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 650;
+    }
+    .card.is-hidden { display: none; }
+    .filter-empty {
+      display: none;
+      color: var(--muted);
+      grid-column: 1 / -1;
+      padding: 24px 8px;
+    }
+    .filter-empty.show { display: block; }
+
     footer {
       margin-top: 28px;
       color: var(--muted);
@@ -226,21 +258,29 @@
       <h1>Share Aura — SoHo office shortlist</h1>
       <p class="sub">Zach’s look-list · traditional (non-coworking) · click arrows or dots to flip photos</p>
       <div class="meta">
-        <span class="chip">16 listings · newest first</span>
+        <span class="chip" id="listing-count">16 listings · newest first</span>
         <span class="chip">Prefer under ~$10k/mo when priced</span>
         <span class="chip">★ = EA pick</span>
         <span class="chip">yellow $ = comp estimate</span>
-        <span class="chip">Updated Sep 9, 2026 · 6:14 PM ET watch</span>
+        <span class="chip">Updated Sep 11, 2026</span>
+      </div>
+      <div class="filters" role="group" aria-label="Rent filter">
+        <span class="label">Show:</span>
+        <button type="button" class="filter-btn" data-filter="all">All</button>
+        <button type="button" class="filter-btn active" data-filter="under10">Under ~$10k</button>
       </div>
     </header>
 
     <section class="grid">
+      <p class="filter-empty" id="filter-empty">No listings in this band right now.</p>
 
       
 
       
 
-      <article class="card starred">
+      
+
+      <article class="card starred" data-rent-mo="12000">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/84-wooster-602-01.jpg" alt="84 Wooster Suite 602 loft interior" />
@@ -275,7 +315,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-rent-mo="21000">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/130-greene-01.jpg" alt="130 Greene second floor loft interior" />
@@ -309,7 +349,7 @@
         </div>
       </article>
 
-      <article class="card starred">
+      <article class="card starred" data-rent-mo="9200">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/456-broadway-01.jpg" alt="456 Broadway fifth floor commercial loft" />
@@ -343,7 +383,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-rent-mo="12500">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/561-broadway-01.jpg" alt="561 Broadway Suite 9B Little Singer Building office" />
@@ -374,7 +414,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-rent-mo="15000">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/1-crosby-01.jpg" alt="1 Crosby fifth floor office interior" />
@@ -408,7 +448,7 @@
         </div>
       </article>
 
-      <article class="card starred">
+      <article class="card starred" data-rent-mo="11000">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/84-wooster-501-01.jpg" alt="84 Wooster Suite 501 loft interior" />
@@ -441,7 +481,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-rent-mo="11600">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/84-wooster-201-01.jpg" alt="84 Wooster Suite 201 loft" />
@@ -473,7 +513,7 @@
         </div>
       </article>
 
-      <article class="card starred">
+      <article class="card starred" data-rent-mo="7500">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/481-broadway-01.jpg" alt="481 Broadway building exterior" />
@@ -506,7 +546,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-rent-mo="7500">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/65-greene-01.jpg" alt="65 Greene Suite 3F loft interior" />
@@ -539,7 +579,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-rent-mo="3300">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/109-lafayette-01.jpg" alt="109 Lafayette Suite 502 interior" />
@@ -571,7 +611,7 @@
         </div>
       </article>
 
-      <article class="card starred">
+      <article class="card starred" data-rent-mo="15200">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/166-mercer-01.jpg" alt="166 Mercer Street entrance" />
@@ -604,7 +644,7 @@
         </div>
       </article>
 
-      <article class="card starred">
+      <article class="card starred" data-rent-mo="5146">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/270-lafayette-01.jpg" alt="270 Lafayette Suite 506 interior" />
@@ -637,7 +677,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-rent-mo="4250">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/51-wooster-01.jpg" alt="51 Wooster office interior" />
@@ -669,7 +709,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-rent-mo="16458">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/79-mercer-flyer.jpg" alt="79 Mercer listing flyer" />
@@ -704,7 +744,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-rent-mo="8250">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/138-wooster-01.jpg" alt="138 Wooster entrance" />
@@ -735,7 +775,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-rent-mo="13800">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/435-broome-01.jpg" alt="435 Broome cast-iron facade" />
@@ -831,5 +871,37 @@
       restart();
     });
   </script>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('.filter-btn');
+      var cards = document.querySelectorAll('article.card[data-rent-mo]');
+      var empty = document.getElementById('filter-empty');
+      var countChip = document.getElementById('listing-count');
+      function apply(mode) {
+        var shown = 0;
+        cards.forEach(function (card) {
+          var rent = parseFloat(card.getAttribute('data-rent-mo'));
+          var ok = mode === 'all' || (mode === 'under10' && rent <= 10000);
+          card.classList.toggle('is-hidden', !ok);
+          if (ok) shown++;
+        });
+        if (empty) empty.classList.toggle('show', shown === 0);
+        if (countChip) {
+          countChip.textContent = shown + (mode === 'under10' ? ' under ~$10k' : ' listings');
+        }
+        buttons.forEach(function (b) {
+          b.classList.toggle('active', b.getAttribute('data-filter') === mode);
+        });
+      }
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () {
+          apply(b.getAttribute('data-filter'));
+        });
+      });
+      apply('under10');
+    })();
+  </script>
+
 </body>
 </html>

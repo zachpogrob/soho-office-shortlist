@@ -243,6 +243,39 @@
     }
     .filter-empty.show { display: block; }
 
+
+    .list-section { margin-top: 8px; }
+    .list-section + .list-section { margin-top: 36px; }
+    h2.section-title {
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 6px;
+      font-weight: 700;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0 0 14px;
+    }
+    .card.flex-card .slideshow {
+      aspect-ratio: 16 / 7;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #1a2233, #12161f);
+    }
+    .card.flex-card .flex-hero {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .badge.flex {
+      background: rgba(167, 139, 250, 0.22);
+      border-color: rgba(167, 139, 250, 0.35);
+      color: #ddd6fe;
+    }
+
     footer {
       margin-top: 28px;
       color: var(--muted);
@@ -256,7 +289,7 @@
   <main>
     <header>
       <h1>Share Aura — SoHo office shortlist</h1>
-      <p class="sub">Zach’s look-list · traditional (non-coworking) · click arrows or dots to flip photos</p>
+      <p class="sub">Two lists: <strong>easy flex</strong> (pay &amp; sit) + <strong>traditional lofts</strong> · photos on loft cards</p>
       <div class="meta">
         <span class="chip" id="listing-count">16 listings · newest first</span>
         <span class="chip">Prefer under ~$10k/mo when priced</span>
@@ -264,14 +297,205 @@
         <span class="chip">yellow $ = comp estimate</span>
         <span class="chip">Updated Sep 11, 2026</span>
       </div>
+    </header>
+
+    <section class="list-section" id="easy-flex">
+      <h2 class="section-title">Easy flex — pay &amp; sit</h2>
+      <p class="section-sub">Membership / private office · days–weeks, not landlord approval · ~3 now / room for 5–8 · yellow $ = published or secondary listing (confirm on tour)</p>
+      <div class="grid" id="flex-grid">
+
+      <article class="card flex-card starred" data-rent-mo="2300" data-list="flex">
+        <div class="slideshow"><div class="flex-hero">Cubico · SoHo</div>
+          <div class="badge star flex">1 · ★ · Flex</div>
+        </div>
+        <div class="body">
+          <p class="star-note">★ EA pick — clearest published private ladder in SoHo</p>
+          <h2 class="name">Cubico — 433 Broadway</h2>
+          <div class="stats">
+            <div><strong>Private office 1–20</strong></div>
+            <div><strong class="est">~$1.7k (3) · ~$2.3k (4)</strong> <span>· 6–8 ~$3–6.3k</span></div>
+            <div><strong>Day $20–25 · Hot desk $199 · Dedicated $500</strong></div>
+          </div>
+          <p class="est-note">Published operator ladder + Hubble examples — confirm live ask.</p>
+          <ul>
+            <li>SoHo proper · entrance also 46 Howard · tour/call same week</li>
+            <li>Best “just pay” private office signal under $10k for your headcount</li>
+            <li>Larger Spring St Cubico live/work suites are oversized (14–30+) — skip for now</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://cubico.co/433-broadway-st/" target="_blank" rel="noopener">Open Cubico</a>
+            <a class="btn" href="https://cubico.co/hot-desks/" target="_blank" rel="noopener">Day / desk pricing</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card flex-card starred" data-rent-mo="3780" data-list="flex">
+        <div class="slideshow"><div class="flex-hero">WeWork · SoHo</div>
+          <div class="badge star flex">2 · ★ · Flex</div>
+        </div>
+        <div class="body">
+          <p class="star-note">★ EA pick — plug-and-play + day pass this week</p>
+          <h2 class="name">WeWork — 379 West Broadway</h2>
+          <div class="stats">
+            <div><strong>Private office</strong></div>
+            <div><strong class="est">~$2.3k (4) · ~$3.8k (6) · ~$6.8k (10)</strong> <span>· Hubble</span></div>
+            <div><strong>Day pass from ~$39</strong></div>
+          </div>
+          <p class="est-note">Secondary listing $ — WeWork quotes vary by term/promo/taxes.</p>
+          <ul>
+            <li>SoHo proper · classic loft WeWork · easy upgrade path</li>
+            <li>On Demand day pass to test the building before committing</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://www.wework.com/buildings/379-w-broadway--new-york-city--NY" target="_blank" rel="noopener">Open WeWork 379</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card flex-card starred" data-rent-mo="2920" data-list="flex">
+        <div class="slideshow"><div class="flex-hero">WeWork · SoHo</div>
+          <div class="badge star flex">3 · ★ · Flex</div>
+        </div>
+        <div class="body">
+          <p class="star-note">★ EA pick — prime Spring/Broadway address</p>
+          <h2 class="name">WeWork — 524 Broadway</h2>
+          <div class="stats">
+            <div><strong>Private office</strong></div>
+            <div><strong>~$2,920/mo+</strong> <span>· 4-person published start</span></div>
+            <div><strong>Day pass from ~$39</strong></div>
+          </div>
+          <ul>
+            <li>SoHo proper · cast-iron / Spring Street presence</li>
+            <li>Priced above 379 / Cubico for similar seats; still << loft $10k band</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://www.wework.com/buildings/524-broadway--new-york-city--NY" target="_blank" rel="noopener">Open WeWork 524</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card flex-card" data-rent-mo="1800" data-list="flex">
+        <div class="slideshow"><div class="flex-hero">The Farm · SoHo</div>
+          <div class="badge flex">4 · Flex</div>
+        </div>
+        <div class="body">
+          <h2 class="name">The Farm SoHo — 447 Broadway</h2>
+          <div class="stats">
+            <div><strong>Private / team desk</strong></div>
+            <div><strong>Private from ~$850</strong> <span>· team 6 from ~$1.8k</span></div>
+            <div><strong>~1-mo min claimed</strong></div>
+          </div>
+          <ul>
+            <li>SoHo proper · startup loft vibe · pet-friendly</li>
+            <li>Ask specifically for vacant private suites at 447 (inventory can be thin online)</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://www.thefarmsoho.com/product/private-offices/" target="_blank" rel="noopener">Open The Farm</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card flex-card" data-rent-mo="2698" data-list="flex">
+        <div class="slideshow"><div class="flex-hero">Regus · Hudson Sq</div>
+          <div class="badge flex">5 · Flex · adj.</div>
+        </div>
+        <div class="body">
+          <h2 class="name">Regus — 101 Avenue of the Americas</h2>
+          <div class="stats">
+            <div><strong>Private office</strong></div>
+            <div><strong class="est">~$2.1k (3) · ~$2.7k (4) · ~$3.4k (5)</strong> <span>· LiquidSpace</span></div>
+            <div><strong>1-mo min</strong></div>
+          </div>
+          <p class="est-note">Adjacent Hudson Square (marketed SoHo) — not SoHo proper.</p>
+          <ul>
+            <li>Transparent aggregator pricing · classic pay-and-sit flex</li>
+            <li>Flat desk rates by size — good if you want exact headcount</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://liquidspace.com/us/ny/new-york/regus-soho-hudson-square" target="_blank" rel="noopener">Open LiquidSpace</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card flex-card" data-rent-mo="900" data-list="flex">
+        <div class="slideshow"><div class="flex-hero">The Malin · SoHo</div>
+          <div class="badge flex">6 · Flex</div>
+        </div>
+        <div class="body">
+          <h2 class="name">The Malin — 32 Mercer</h2>
+          <div class="stats">
+            <div><strong>Access / desk / private</strong></div>
+            <div><strong>Access from $399 · Desk from $850</strong></div>
+            <div><strong>Private POR</strong></div>
+          </div>
+          <ul>
+            <li>SoHo proper · boutique / rooftop · FAQ: no application for membership</li>
+            <li>Private team office = email sales@themalin.co + tour</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://themalin.co/locations/soho/" target="_blank" rel="noopener">Open The Malin</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card flex-card" data-rent-mo="5813" data-list="flex">
+        <div class="slideshow"><div class="flex-hero">Industrious · Hudson Sq</div>
+          <div class="badge flex">7 · Flex · adj.</div>
+        </div>
+        <div class="body">
+          <h2 class="name">Industrious SoHo West — 325 Hudson</h2>
+          <div class="stats">
+            <div><strong>Private office</strong></div>
+            <div><strong class="est">~$4.2–8k for 2–5</strong> <span>· LiquidSpace</span></div>
+            <div><strong>Premium hospitality</strong></div>
+          </div>
+          <p class="est-note">Hudson Square (branded SoHo West) — pricier than Cubico/WeWork.</p>
+          <ul>
+            <li>Still under traditional $10k ceiling for ~5 seats</li>
+            <li>Best if you want quieter / polished private offices</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://www.industriousoffice.com/en/m/new-york-city" target="_blank" rel="noopener">Open Industrious</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card flex-card" data-rent-mo="1233" data-list="flex">
+        <div class="slideshow"><div class="flex-hero">The Square · Hudson Sq</div>
+          <div class="badge flex">8 · Flex · adj.</div>
+        </div>
+        <div class="body">
+          <h2 class="name">The Square — 205 Hudson</h2>
+          <div class="stats">
+            <div><strong>Private from ~$700</strong></div>
+            <div><strong>Coworking $275 · Dedicated $500</strong></div>
+            <div><strong>Ex-WeWork building</strong></div>
+          </div>
+          <p class="est-note">Adjacent Hudson Square / Tribeca edge — not SoHo proper.</p>
+          <ul>
+            <li>Published tiers · private 1–10 on aggregators</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://www.thesq.com/locations/nyc/205-hudson" target="_blank" rel="noopener">Open The Square</a>
+          </div>
+        </div>
+      </article>
+
+      </div>
+    </section>
+
+    <section class="list-section" id="traditional-lofts">
+      <h2 class="section-title">Traditional loft leases</h2>
+      <p class="section-sub">Broker / landlord path · more paperwork · rent filter below applies to this list only</p>
+
       <div class="filters" role="group" aria-label="Rent filter">
-        <span class="label">Show:</span>
+        <span class="label">Show lofts:</span>
         <button type="button" class="filter-btn" data-filter="all">All</button>
         <button type="button" class="filter-btn active" data-filter="under10">Under ~$10k</button>
       </div>
-    </header>
 
-    <section class="grid">
+
+    <section class="grid" id="traditional-grid">
       <p class="filter-empty" id="filter-empty">No listings in this band right now.</p>
 
       
@@ -280,7 +504,7 @@
 
       
 
-      <article class="card starred" data-rent-mo="12000">
+      <article class="card starred" data-rent-mo="12000" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/84-wooster-602-01.jpg" alt="84 Wooster Suite 602 loft interior" />
@@ -315,7 +539,7 @@
         </div>
       </article>
 
-      <article class="card" data-rent-mo="21000">
+      <article class="card" data-rent-mo="21000" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/130-greene-01.jpg" alt="130 Greene second floor loft interior" />
@@ -349,7 +573,7 @@
         </div>
       </article>
 
-      <article class="card starred" data-rent-mo="9200">
+      <article class="card starred" data-rent-mo="9200" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/456-broadway-01.jpg" alt="456 Broadway fifth floor commercial loft" />
@@ -383,7 +607,7 @@
         </div>
       </article>
 
-      <article class="card" data-rent-mo="12500">
+      <article class="card" data-rent-mo="12500" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/561-broadway-01.jpg" alt="561 Broadway Suite 9B Little Singer Building office" />
@@ -414,7 +638,7 @@
         </div>
       </article>
 
-      <article class="card" data-rent-mo="15000">
+      <article class="card" data-rent-mo="15000" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/1-crosby-01.jpg" alt="1 Crosby fifth floor office interior" />
@@ -448,7 +672,7 @@
         </div>
       </article>
 
-      <article class="card starred" data-rent-mo="11000">
+      <article class="card starred" data-rent-mo="11000" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/84-wooster-501-01.jpg" alt="84 Wooster Suite 501 loft interior" />
@@ -481,7 +705,7 @@
         </div>
       </article>
 
-      <article class="card" data-rent-mo="11600">
+      <article class="card" data-rent-mo="11600" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/84-wooster-201-01.jpg" alt="84 Wooster Suite 201 loft" />
@@ -513,7 +737,7 @@
         </div>
       </article>
 
-      <article class="card starred" data-rent-mo="7500">
+      <article class="card starred" data-rent-mo="7500" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/481-broadway-01.jpg" alt="481 Broadway building exterior" />
@@ -546,7 +770,7 @@
         </div>
       </article>
 
-      <article class="card" data-rent-mo="7500">
+      <article class="card" data-rent-mo="7500" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/65-greene-01.jpg" alt="65 Greene Suite 3F loft interior" />
@@ -579,7 +803,7 @@
         </div>
       </article>
 
-      <article class="card" data-rent-mo="3300">
+      <article class="card" data-rent-mo="3300" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/109-lafayette-01.jpg" alt="109 Lafayette Suite 502 interior" />
@@ -611,7 +835,7 @@
         </div>
       </article>
 
-      <article class="card starred" data-rent-mo="15200">
+      <article class="card starred" data-rent-mo="15200" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/166-mercer-01.jpg" alt="166 Mercer Street entrance" />
@@ -644,7 +868,7 @@
         </div>
       </article>
 
-      <article class="card starred" data-rent-mo="5146">
+      <article class="card starred" data-rent-mo="5146" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/270-lafayette-01.jpg" alt="270 Lafayette Suite 506 interior" />
@@ -677,7 +901,7 @@
         </div>
       </article>
 
-      <article class="card" data-rent-mo="4250">
+      <article class="card" data-rent-mo="4250" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/51-wooster-01.jpg" alt="51 Wooster office interior" />
@@ -709,7 +933,7 @@
         </div>
       </article>
 
-      <article class="card" data-rent-mo="16458">
+      <article class="card" data-rent-mo="16458" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/79-mercer-flyer.jpg" alt="79 Mercer listing flyer" />
@@ -744,7 +968,7 @@
         </div>
       </article>
 
-      <article class="card" data-rent-mo="8250">
+      <article class="card" data-rent-mo="8250" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/138-wooster-01.jpg" alt="138 Wooster entrance" />
@@ -775,7 +999,7 @@
         </div>
       </article>
 
-      <article class="card" data-rent-mo="13800">
+      <article class="card" data-rent-mo="13800" data-list="traditional">
         <div class="slideshow" data-slideshow>
           <div class="slides">
             <img class="active" src="assets/435-broome-01.jpg" alt="435 Broome cast-iron facade" />
@@ -808,10 +1032,11 @@
       </article>
 
     </section>
+    </section>
 
     <footer>
       <p>Use the arrows or dots on each card to flip through every photo. Auto-advances every few seconds; hover/pause on a card to stop.</p>
-      <p>Share Aura office hunt · Sep 11, 2026 · newest first · ★ picks · yellow $ = comp estimates (not quotes)</p>
+      <p>Share Aura office hunt · Sep 11, 2026 · easy flex list + traditional lofts · yellow $ = estimate / secondary</p>
     </footer>
   </main>
 
@@ -875,7 +1100,7 @@
   <script>
     (function () {
       var buttons = document.querySelectorAll('.filter-btn');
-      var cards = document.querySelectorAll('article.card[data-rent-mo]');
+      var cards = document.querySelectorAll('#traditional-grid article.card[data-rent-mo]');
       var empty = document.getElementById('filter-empty');
       var countChip = document.getElementById('listing-count');
       function apply(mode) {
@@ -888,7 +1113,7 @@
         });
         if (empty) empty.classList.toggle('show', shown === 0);
         if (countChip) {
-          countChip.textContent = shown + (mode === 'under10' ? ' under ~$10k' : ' listings');
+          countChip.textContent = shown + (mode === 'under10' ? ' lofts under ~$10k' : ' loft listings');
         }
         buttons.forEach(function (b) {
           b.classList.toggle('active', b.getAttribute('data-filter') === mode);
